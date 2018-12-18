@@ -24,7 +24,7 @@ namespace NoteApp
         /// <param name="notes">Объект проекта для сериализации</param>
         public static void Serialization(Project notes)
         {
-            //Создадим экземпляр сериализатора.
+            //Создадим экземпляр сериализатора
             JsonSerializer serializer = new JsonSerializer();
             //Открываем поток для записи в файл с указанием пути.
             using (StreamWriter sw = new StreamWriter(_pathMyDocuments))
