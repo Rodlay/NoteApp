@@ -30,7 +30,7 @@ namespace NoteApp
         /// <summary>
         /// Поле "Время последнего изменения".
         /// </summary>
-        private DateTime _lastModifiedTime;
+        private DateTime _lastChangeTime;
         /// <summary>
         /// Конструктор без параметров класса Note для инициализации полей.
         /// </summary>
@@ -40,7 +40,7 @@ namespace NoteApp
             _category = NoteCategory.Other;
             _text = "";
             _creationTime = DateTime.Now;
-            _lastModifiedTime = DateTime.Now;
+            _lastChangeTime = DateTime.Now;
         }
         /// <summary>
         /// Конструктор с параметрами класса Note.
@@ -54,7 +54,7 @@ namespace NoteApp
             _category = category;
             _text = text;
             _creationTime = DateTime.Now;
-            _lastModifiedTime = DateTime.Now;
+            _lastChangeTime = DateTime.Now;
         }
         /// <summary>
         /// Возвращает и задаёт название заметки.
@@ -83,7 +83,7 @@ namespace NoteApp
                 _category = this._category,
                 _text = this._text,
                 _creationTime = this._creationTime,
-                _lastModifiedTime = this._lastModifiedTime
+                _lastChangeTime = this._lastChangeTime
             };
         }
         /// <summary>
@@ -115,8 +115,8 @@ namespace NoteApp
         /// </summary>
         public DateTime LastModifiedTime
         {
-            set { _lastModifiedTime = value; }
-            get { return _lastModifiedTime; }
+            set { _lastChangeTime = value; }
+            get { return _lastChangeTime; }
         }
     }
 }

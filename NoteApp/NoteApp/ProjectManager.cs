@@ -17,7 +17,7 @@ namespace NoteApp
         /// <summary>
         /// Поле константы, в котором хранится путь к файлу системы.
         /// </summary>
-        private static string _pathMyDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\NoteApp.notes";
+        private static string _MyDocumentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\NoteApp.notes";
         /// <summary>
         /// Метод для записи проекта в файл.
         /// </summary>
@@ -27,7 +27,7 @@ namespace NoteApp
             //Создадим экземпляр сериализатора
             JsonSerializer serializer = new JsonSerializer();
             //Открываем поток для записи в файл с указанием пути.
-            using (StreamWriter sw = new StreamWriter(_pathMyDocuments))
+            using (StreamWriter sw = new StreamWriter(_MyDocumentsPath))
             using (JsonWriter writer = new JsonTextWriter(sw))
             {
                 //Открываем сериализацию и передаём объект,
@@ -46,7 +46,7 @@ namespace NoteApp
             //Создаётся экземпляр сериализатора.
             JsonSerializer serializer = new JsonSerializer();
             //Открывается поток для чтения из файла с указанием пути.
-            using (StreamReader sr = new StreamReader(_pathMyDocuments))
+            using (StreamReader sr = new StreamReader(_MyDocumentsPath))
             using (JsonReader reader = new JsonTextReader(sr))
             {
                 //Вызывается десериализация и явно преобразуется результат в целевой тип данных
